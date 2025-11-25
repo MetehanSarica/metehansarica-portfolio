@@ -54,7 +54,7 @@ export default function Home() {
               </span>{" "}
               using{" "}
               <span className="font-semibold text-slate-100">
-                C#, .NET, DevExpress and SQL
+                C#, .NET, DevExpress and SQL Server
               </span>
               . I enjoy creating tools that automate study and work, especially
               by integrating{" "}
@@ -66,19 +66,18 @@ export default function Home() {
             <div className="mb-4 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 px-4 py-2 text-sm font-medium text-slate-950 shadow-lg shadow-sky-500/30 hover:translate-y-[1px] hover:shadow-sky-500/50 transition"
+                className="rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 px-4 py-2 text-sm font-medium text-slate-950 shadow-lg shadow-sky-500/30 transition hover:translate-y-[1px] hover:shadow-sky-500/50"
               >
                 View Projects
               </a>
               <a
                 href="#contact"
-                className="rounded-full border border-slate-700/80 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-100 hover:border-sky-400 hover:text-sky-300 transition"
+                className="rounded-full border border-slate-700/80 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-sky-400 hover:text-sky-300"
               >
                 Contact Me
               </a>
             </div>
             <div className="space-y-1 text-xs text-slate-400">
-              <p>📍 Bursa, Türkiye</p>
               <p>
                 🎯 Looking for{" "}
                 <span className="font-medium text-slate-200">
@@ -96,7 +95,7 @@ export default function Home() {
               </p>
               <ul className="space-y-2 text-xs text-slate-200">
                 <li>• Desktop apps with .NET &amp; DevExpress</li>
-                <li>• SQL &amp; database-driven applications</li>
+                <li>• SQL Server &amp; database-driven applications</li>
                 <li>• AI integration (Gemini API, automation)</li>
               </ul>
               <p className="mt-3 border-t border-dashed border-slate-700 pt-2 text-[11px] text-slate-400">
@@ -111,13 +110,14 @@ export default function Home() {
           <h2 className="text-xl font-semibold text-slate-50">About</h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-300">
             I am a Computer Programming student and Junior .NET Developer
-            passionate about building useful, maintainable desktop applications
-            and tools. I enjoy working with{" "}
+            focused on{" "}
             <span className="font-semibold text-slate-100">
-              C#, .NET, DevExpress and SQL
+              line-of-business desktop applications, SQL Server and DevExpress
+              UI
             </span>
-            , and I like turning ideas into real software that other people can
-            use.
+            . I like turning ideas into reliable software, with clean
+            architecture, readable code and practical features that people
+            actually use.
           </p>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -126,17 +126,20 @@ export default function Home() {
                 Who I am
               </h3>
               <p className="mb-3">
-                I like combining clean UI with solid logic behind it. One of my
-                main projects,{" "}
+                I like combining clean UI with solid application logic behind
+                it. One of my main projects,{" "}
                 <span className="font-semibold text-sky-400">Notoid</span>, is
                 an AI-powered study assistant that summarizes documents into
                 structured notes using Gemini AI.
               </p>
               <p>
-                Outside of coding, I experiment with{" "}
-                <span className="font-semibold">Arduino / IoT</span> and produce
-                music as <span className="font-semibold">TheyCallMeSaku</span>,
-                which keeps my creative side active.
+                I&apos;m also currently working on{" "}
+                <span className="font-semibold text-sky-400">Storiva</span>, a
+                smart inventory &amp; product management system built with .NET
+                8, DevExpress and SQL Server. I enjoy experimenting with{" "}
+                <span className="font-semibold">desktop app architecture</span>,
+                automation workflows and integrating AI into existing tools to
+                make them more useful.
               </p>
             </div>
 
@@ -149,10 +152,16 @@ export default function Home() {
               </p>
               <ul className="list-disc space-y-1 pl-5 text-xs text-slate-300">
                 <li>
-                  Work with C#, .NET, DevExpress and SQL in real-world projects
+                  Work with C#, .NET, DevExpress and SQL Server in real-world
+                  projects
                 </li>
-                <li>Contribute to desktop or backend applications</li>
-                <li>Learn from experienced developers and grow as an engineer</li>
+                <li>
+                  Contribute to desktop or backend applications used by real
+                  users
+                </li>
+                <li>
+                  Learn from experienced developers and grow as an engineer
+                </li>
               </ul>
             </div>
           </div>
@@ -171,9 +180,9 @@ export default function Home() {
                 Languages &amp; Frameworks
               </h3>
               <ul className="list-disc space-y-1 pl-4 text-xs text-slate-300">
-                <li>C#, .NET (Framework &amp; .NET 8)</li>
-                <li>Windows Forms, DevExpress</li>
-                <li>SQL (queries, CRUD operations)</li>
+                <li>C#, .NET Framework &amp; .NET 8</li>
+                <li>Windows Forms &amp; DevExpress UI</li>
+                <li>SQL / T-SQL (queries, CRUD operations)</li>
                 <li>HTML, CSS, basic JavaScript</li>
               </ul>
             </div>
@@ -184,8 +193,9 @@ export default function Home() {
               <ul className="list-disc space-y-1 pl-4 text-xs text-slate-300">
                 <li>Visual Studio, VS Code</li>
                 <li>Git &amp; GitHub</li>
-                <li>DevExpress UI components</li>
-                <li>QuestPDF, OpenXML, PdfPig</li>
+                <li>DevExpress components (DataGrid, Ribbon, etc.)</li>
+                <li>SQL Server for Storiva (indexes, relations, queries)</li>
+                <li>QuestPDF, OpenXML, PdfPig (Notoid)</li>
                 <li>AI APIs (Gemini)</li>
               </ul>
             </div>
@@ -196,8 +206,8 @@ export default function Home() {
               <ul className="list-disc space-y-1 pl-4 text-xs text-slate-300">
                 <li>Arduino &amp; simple IoT projects</li>
                 <li>Automation workflows</li>
-                <li>Desktop app architecture</li>
-                <li>Music production &amp; sound design</li>
+                <li>Desktop app architecture &amp; design patterns</li>
+                <li>Performance, logging and error handling</li>
               </ul>
             </div>
           </div>
@@ -211,6 +221,35 @@ export default function Home() {
           </p>
 
           <div className="mt-6 space-y-4">
+            {/* Storiva */}
+            <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm">
+              <h3 className="text-sm font-semibold text-slate-100">
+                Storiva – Smart Inventory &amp; Product Management
+              </h3>
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.16em] text-sky-400">
+                C# • .NET 8 • DevExpress • SQL Server • AI Integration
+              </p>
+              <p className="mt-2 text-xs text-slate-300">
+                Storiva is a smart inventory and product management system built
+                with .NET 8, DevExpress and SQL Server. It focuses on stock
+                tracking, product management, role-based access and future
+                AI-assisted features to help small businesses manage their
+                operations more efficiently.
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-slate-300">
+                <li>Designed with a modern DevExpress-based desktop UI</li>
+                <li>
+                  Uses SQL Server for structured, reliable data storage and
+                  queries
+                </li>
+                <li>
+                  Architected to integrate AI features (Gemini API) for product
+                  descriptions and insights
+                </li>
+              </ul>
+            </article>
+
+            {/* Notoid */}
             <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm">
               <h3 className="text-sm font-semibold text-slate-100">
                 Notoid – AI-Powered Study Assistant
@@ -240,41 +279,34 @@ export default function Home() {
               </div>
             </article>
 
+            {/* metehansarica.dev */}
             <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm">
               <h3 className="text-sm font-semibold text-slate-100">
-                Desktop Workflow Utilities
+                metehansarica.dev – Personal Portfolio
               </h3>
               <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.16em] text-sky-400">
-                C# • .NET • Windows Forms
+                Next.js • Tailwind CSS • Netlify • Custom Domain
               </p>
               <p className="mt-2 text-xs text-slate-300">
-                Small helper tools built with Windows Forms to automate daily
-                tasks, experiment with UI layouts and practice clean coding
-                patterns.
+                A modern, responsive portfolio website to showcase my projects,
+                skills and experience as a Junior .NET Developer. Deployed on
+                Netlify with a custom domain and Google Analytics integration to
+                track visitors and engagement.
               </p>
               <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-slate-300">
-                <li>Focus on simple but usable interfaces</li>
-                <li>Event-driven logic, background workers and dialogs</li>
-                <li>Improved understanding of reusable forms &amp; components</li>
+                <li>Built with Next.js and Tailwind CSS</li>
+                <li>Deployed via Netlify with CI/CD workflow</li>
+                <li>Connected to metehansarica.dev custom domain</li>
               </ul>
-            </article>
-
-            <article className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-sm">
-              <h3 className="text-sm font-semibold text-slate-100">
-                Arduino &amp; IoT Experiments
-              </h3>
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.16em] text-sky-400">
-                Arduino • C/C++ • Serial Communication
-              </p>
-              <p className="mt-2 text-xs text-slate-300">
-                Hardware experiments using Arduino, including LED patterns,
-                simple sensors and Bluetooth communication with HC-06.
-              </p>
-              <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-slate-300">
-                <li>Learned how hardware and software interact in real time</li>
-                <li>Worked with serial communication and debugging</li>
-                <li>Strengthened problem-solving and patience 😄</li>
-              </ul>
+              <div className="mt-3 text-xs">
+                <a
+                  href="https://metehansarica.dev"
+                  target="_blank"
+                  className="text-sky-400 underline-offset-2 hover:underline"
+                >
+                  Visit site
+                </a>
+              </div>
             </article>
           </div>
         </section>
@@ -296,10 +328,10 @@ export default function Home() {
                 <li>
                   📧 Email:{" "}
                   <a
-                    href="mailto:metehansarica@outlook.com"
+                    href="mailto:metehansrc23@gmail.com"
                     className="text-sky-400 underline-offset-2 hover:underline"
                   >
-                    metehansarica@outlook.com
+                    metehansrc23@gmail.com
                   </a>
                 </li>
                 <li>
@@ -322,13 +354,6 @@ export default function Home() {
                     github.com/MetehanSarica
                   </a>
                 </li>
-                <li>
-                  🎵 Music:{" "}
-                  <span className="text-sky-400">
-                    TheyCallMeSaku on Spotify
-                  </span>{" "}
-                  (link coming soon)
-                </li>
               </ul>
             </div>
             <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-xs text-slate-300">
@@ -345,8 +370,8 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-slate-800/80 py-5 text-center text-[11px] text-slate-500">
-        © {new Date().getFullYear()} Metehan Sarıca · Built with Next.js, Tailwind
-        and a lot of C#.
+        © {new Date().getFullYear()} Metehan Sarıca · Built with Next.js,
+        Tailwind and a lot of C#.
       </footer>
     </div>
   );
