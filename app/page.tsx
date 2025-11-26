@@ -337,11 +337,11 @@ export default function Home() {
                 <li>
                   💼 LinkedIn:{" "}
                   <a
-                    href="https://www.linkedin.com/in/metehan-sarica"
+                    href="https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/"
                     target="_blank"
                     className="text-sky-400 underline-offset-2 hover:underline"
                   >
-                    linkedin.com/in/metehan-sarica
+                    linkedin.com/in/metehan-sarıca-09b27a269
                   </a>
                 </li>
                 <li>
