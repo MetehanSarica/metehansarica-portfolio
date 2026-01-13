@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { Providers } from "./providers";
 import type React from "react";
 
 const inter = Inter({
@@ -44,7 +45,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

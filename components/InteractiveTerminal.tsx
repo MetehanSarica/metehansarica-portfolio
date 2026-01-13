@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Terminal, X, Minimize2, Maximize2, ChevronRight } from "lucide-react";
+import { Terminal, X, Minimize2, Maximize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface CommandHistory {
     type: "input" | "output";
@@ -10,11 +11,12 @@ interface CommandHistory {
 }
 
 export const InteractiveTerminal = () => {
+    const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
     const [input, setInput] = useState("");
     const [history, setHistory] = useState<CommandHistory[]>([
-        { type: "output", content: "Welcome to Metehan's Terminal. Type 'help' to see available commands." },
+        { type: "output", content: t.terminal.welcome },
     ]);
     const [currentDirectory, setCurrentDirectory] = useState("~");
     const bottomRef = useRef<HTMLDivElement>(null);
@@ -40,16 +42,8 @@ export const InteractiveTerminal = () => {
 
         switch (command) {
             case "help":
-                output = `Available commands:
-  help      - Show this help message
-  ls        - List sections
-  cd [sec]  - Go to section (about, skills, projects, contact)
-  cat [sec] - Read usage/content of section
-  open [social] - Open links (github, linkedin, email, resume)
-  whoami    - Display bio
-  date      - Show current date
-  clear     - Clear terminal
-  repo      - View source code`;
+                output = `${t.terminal.help_header}
+${t.terminal.help_cols}`;
                 break;
             case "ls":
             case "dir":
@@ -57,38 +51,38 @@ export const InteractiveTerminal = () => {
                 break;
             case "cd":
                 if (!argument) {
-                    output = "Usage: cd [section] (e.g., 'cd projects')";
+                    output = t.terminal.usage_cd;
                 } else {
                     const section = document.getElementById(argument);
                     if (section) {
                         section.scrollIntoView({ behavior: "smooth" });
-                        output = `Navigating to ${argument}...`;
+                        output = `${t.terminal.navigating} ${argument}...`;
                         setCurrentDirectory(`~/${argument}`);
                     } else if (argument === "..") {
                         setCurrentDirectory("~");
-                        output = "Returned to home.";
+                        output = t.terminal.returned_home;
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     } else {
-                        output = `Directory not found: ${argument}. Try 'ls'.`;
+                        output = `${t.terminal.dir_not_found}: ${argument}. ${t.terminal.try_help}`;
                     }
                 }
                 break;
             case "cat":
                 if (!argument) {
-                    output = "Usage: cat [file]";
+                    output = t.terminal.usage_cat;
                 } else {
                     switch (argument) {
-                        case "about": output = "Creating reliable software with clean architecture."; break;
-                        case "skills": output = "C# .NET, SQL Server, DevExpress, AI Integration..."; break;
-                        case "projects": output = "Storiva, Notoid, and this Portfolio."; break;
-                        case "contact": output = "Email: metehansrc23@gmail.com"; break;
-                        case "resume.pdf": output = "Error: Binary file not printable. Try 'open resume'."; break;
-                        default: output = `File not found: ${argument}`;
+                        case "about": output = t.terminal.cat_about; break;
+                        case "skills": output = t.terminal.cat_skills; break;
+                        case "projects": output = t.terminal.cat_projects; break;
+                        case "contact": output = t.terminal.cat_contact; break;
+                        case "resume.pdf": output = t.terminal.cat_resume_error; break;
+                        default: output = `${t.terminal.file_not_found}: ${argument}`;
                     }
                 }
                 break;
             case "whoami":
-                output = "Metehan Sarıca - Junior .NET Developer | Student | Automation Enthusiast";
+                output = t.terminal.whoami;
                 break;
             case "date":
                 output = new Date().toString();
@@ -103,26 +97,26 @@ export const InteractiveTerminal = () => {
             case "email":
                 if (command === "github" || argument === "github") {
                     window.open("https://github.com/MetehanSarica", "_blank");
-                    output = "Opening GitHub...";
+                    output = `${t.terminal.opening} GitHub...`;
                 } else if (command === "linkedin" || argument === "linkedin") {
                     window.open("https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/", "_blank");
-                    output = "Opening LinkedIn...";
+                    output = `${t.terminal.opening} LinkedIn...`;
                 } else if (command === "email" || argument === "email") {
                     window.location.href = "mailto:metehansrc23@gmail.com";
-                    output = "Opening Mail Client...";
+                    output = `${t.terminal.opening} Mail Client...`;
                 } else {
-                    output = "Usage: open [github|linkedin|email]";
+                    output = t.terminal.usage_open;
                 }
                 break;
             case "repo":
                 window.open("https://github.com/MetehanSarica/metehansarica-portfolio", "_blank"); // Assuming repo name
-                output = "Opening Repository...";
+                output = `${t.terminal.opening} Repository...`;
                 break;
             case "":
                 output = "";
                 break;
             default:
-                output = `Command not found: ${command}. Type 'help' for available commands.`;
+                output = `${t.terminal.cmd_not_found}: ${command}. ${t.terminal.try_help}`;
         }
 
         setHistory((prev) => [
