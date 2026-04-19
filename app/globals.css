@@ -10,34 +10,14 @@ html {
 }
 
 body {
-    background-color: #020617;
-    /* slate-950 */
-    color: #e2e8f0;
-    /* slate-200 */
+    background-color: #121019;
+    color: #EDE9FE;
     overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0D0B14; }
+::-webkit-scrollbar-thumb { background: #3B2F6B; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #5B4A9B; }
 
-::-webkit-scrollbar-track {
-    background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-}
-
-/* Code selection */
-::selection {
-    background: rgba(14, 165, 233, 0.3);
-    /* sky-500 */
-    color: #fff;
-}
+::selection { background: rgba(139,92,246,0.4); color: #fff; }

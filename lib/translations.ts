@@ -23,59 +23,25 @@ export const translations = {
         },
         about: {
             title: "About",
-            p1_part1: "I am a Computer Programming student and Junior .NET Developer focused on",
-            p1_highlight1: "line-of-business desktop applications",
-            p1_highlight2: "SQL Server",
-            p1_part2: "and",
-            p1_highlight3: "DevExpress UI",
-            p2: "I like turning ideas into reliable software, with clean architecture, readable code and practical features that people actually use.",
-            whoIAm: "Who I am",
-            whoIAm_text: "I like combining clean UI with solid application logic behind it. One of my main projects,",
-            whoIAm_highlight: "Notoid",
-            whoIAm_text2: "is an AI-powered study assistant that summarizes documents into structured notes using Gemini AI.",
-            currentWork_text: "I'm also currently working on",
-            currentWork_highlight: "Storiva",
-            currentWork_text2: "a smart inventory & product management system built with .NET 8, DevExpress and SQL Server. I enjoy experimenting with desktop app architecture, automation workflows and integrating AI into existing tools to make them more useful.",
-            whatImLookingFor: "What I'm looking for",
-            whatImLookingFor_text: "I'm actively seeking opportunities where I can:",
-            lookingFor_list: [
-                "Work with C#, .NET, DevExpress and SQL Server in real-world projects",
-                "Contribute to desktop or backend applications used by real users",
-                "Learn from experienced developers and grow as an engineer",
+            paragraphs: [
+                "I'm a 2nd-year Computer Programming student at Afyon Kocatepe University. My development philosophy is built around reducing dependency on cloud APIs, building offline-capable, performance-first architectures.",
+                "I specialize in the Full-Stack .NET ecosystem, C# and modern desktop technologies (WPF, Tauri), building high-performance, efficient tools. Recently, I've been focusing on fully local AI (LLM) integrations and autonomous systems.",
+                "Outside of software, I play electric guitar and have interests in sound engineering and hardware routing.",
             ],
             currentFocus: "current_focus",
             focus_list: [
-                "Desktop apps with .NET & DevExpress",
-                "SQL Server & database-driven applications",
-                "AI integration (Gemini API, automation)",
+                "Full-Stack .NET & Rust for high-performance desktop apps",
+                "Local LLM integration and autonomous systems",
+                "Performance-first, offline-capable architecture",
             ],
-            quote: "\"Always learning. Always building useful tools.\"",
+            quote: "\"Build offline-first. Ship fast. Own the stack.\"",
         },
         skills: {
             title: "Tech Stack",
-            stack: "Stack",
-            tools: "Tools",
-            interests: "Interests",
-            stack_list: [
-                "C#, .NET Framework & .NET 8",
-                "Windows Forms & DevExpress UI",
-                "SQL / T-SQL (Queries, CRUD)",
-                "HTML, CSS, Basic JavaScript"
-            ],
-            tools_list: [
-                "Visual Studio, VS Code",
-                "Git & GitHub",
-                "DevExpress (DataGrid, Ribbon)",
-                "SQL Server (Relations, Queries)",
-                "QuestPDF, OpenXML, PdfPig",
-                "AI APIs (Gemini)"
-            ],
-            interests_list: [
-                "Arduino & Simple IoT Projects",
-                "Automation Workflows",
-                "Desktop App Architecture",
-                "Performance & Logging"
-            ],
+            core:    { label: "// CORE & BACKEND",       items: ["C#", ".NET 8", "Rust", "Python", "Java"] },
+            desktop: { label: "// DESKTOP & FRONTEND",   items: ["WPF", "WinForms", "DevExpress", "Tauri", "Svelte", "Next.js", "Tailwind CSS"] },
+            ai:      { label: "// AI & AUTOMATION",      items: ["Ollama", "Llama 3.2", "Local LLM Integration", "Agentic Workflows"] },
+            arch:    { label: "// ARCHITECTURE & TOOLS", items: ["Dapr", "SQL Server", "Git", "Playwright"] },
         },
         projects: {
             title: "Featured Projects",
@@ -110,6 +76,27 @@ export const translations = {
                     "Connected to metehansarica.dev custom domain"
                 ],
                 link: "Visit site"
+            },
+            sakuKaze: {
+                title: "Saku Kaze – High-Performance Text Editor",
+                subtitle: "RUST • SVELTE • TAURI",
+                desc: "An offline, ultra-fast text editor with significantly lower memory consumption compared to traditional Electron-based editors. Built for speed and efficiency without sacrificing a modern user experience.",
+                bullets: [
+                    "Native performance with Rust and Tauri",
+                    "Reactive and lightweight UI with Svelte",
+                    "Fully offline-first architecture"
+                ],
+                link: "View on GitHub"
+            },
+            saku: {
+                title: "S.A.K.U. – Local AI Assistant",
+                subtitle: "PYTHON • OLLAMA • LLAMA 3.2",
+                desc: "A personal AI and automation assistant with a futuristic interface that runs entirely on-device, requiring no internet connection. Designed for privacy-first deep system control and automation workflows.",
+                bullets: [
+                    "100% local LLM integration via Ollama and Llama 3.2",
+                    "Python-based deep system control and automation",
+                    "Futuristic cyberpunk/terminal aesthetic UI"
+                ]
             }
         },
         contact: {
@@ -173,59 +160,25 @@ export const translations = {
         },
         about: {
             title: "Hakkımda",
-            p1_part1: "Bilgisayar Programcılığı öğrencisi ve Junior .NET Geliştiricisiyim. Odaklandığım alanlar:",
-            p1_highlight1: "kurumsal masaüstü uygulamaları",
-            p1_highlight2: "SQL Server",
-            p1_part2: "ve",
-            p1_highlight3: "DevExpress Arayüzleri",
-            p2: "Fikirleri; temiz mimari, okunabilir kod ve insanların gerçekten kullanacağı pratik özelliklerle güvenilir yazılımlara dönüştürmeyi seviyorum.",
-            whoIAm: "Ben Kimim",
-            whoIAm_text: "Temiz arayüzleri, arkadaki sağlam uygulama mantığıyla birleştirmeyi seviyorum. Ana projelerimden biri olan",
-            whoIAm_highlight: "Notoid",
-            whoIAm_text2: "belgeleri özetleyerek Gemini AI kullanarak yapılandırılmış notlar çıkaran yapay zeka destekli bir çalışma asistanıdır.",
-            currentWork_text: "Şu anda ayrıca",
-            currentWork_highlight: "Storiva",
-            currentWork_text2: "üzerinde çalışıyorum; .NET 8, DevExpress ve SQL Server ile geliştirilen akıllı bir stok ve ürün yönetim sistemi. Masaüstü uygulama mimarisi, otomasyon iş akışları ve mevcut araçları daha kullanışlı hale getirmek için yapay zeka entegrasyonu ile deneyler yapmaktan keyif alıyorum.",
-            whatImLookingFor: "Ne Arıyorum",
-            whatImLookingFor_text: "Şu fırsatları aktif olarak arıyorum:",
-            lookingFor_list: [
-                "C#, .NET, DevExpress ve SQL Server ile gerçek dünya projelerinde çalışmak",
-                "Gerçek kullanıcılar tarafından kullanılan masaüstü veya backend uygulamalarına katkıda bulunmak",
-                "Deneyimli geliştiricilerden öğrenmek ve bir mühendis olarak büyümek",
+            paragraphs: [
+                "Afyon Kocatepe Üniversitesi'nde Bilgisayar Programcılığı 2. sınıf öğrencisiyim. Geliştirme felsefem; bulut API'lerine olan bağımlılığı azaltan, çevrimdışı çalışabilen ve 'performance-first' (performans odaklı) mimariler inşa etmek üzerine kurulu.",
+                "Özellikle Full-Stack .NET ekosistemi, C# ve modern masaüstü teknolojileri (WPF, Tauri) ile yüksek performanslı, verimli araçlar geliştiriyorum. Son dönemde tamamen yerel cihazda çalışan yapay zeka (LLM) entegrasyonları ve otonom sistemler üzerine yoğunlaşıyorum.",
+                "Yazılım dünyası dışında elektro gitar çalıyor, ses mühendisliği ve donanım yönlendirmeleriyle ilgileniyorum.",
             ],
             currentFocus: "şu_anki_odak",
             focus_list: [
-                ".NET & DevExpress ile masaüstü uygulamaları",
-                "SQL Server & veritabanı tabanlı uygulamalar",
-                "Yapay Zeka entegrasyonu (Gemini API, otomasyon)",
+                "Full-Stack .NET & Rust ile yüksek performanslı masaüstü uygulamaları",
+                "Yerel LLM entegrasyonu ve otonom sistemler",
+                "Performance-first, çevrimdışı mimari prensipleri",
             ],
-            quote: "\"Daima öğreniyorum. Daima faydalı araçlar geliştiriyorum.\"",
+            quote: "\"Önce çevrimdışı inşa et. Hızlı çalıştır. Stack'e sahip ol.\"",
         },
         skills: {
             title: "Teknoloji Yığını",
-            stack: "Yığın",
-            tools: "Araçlar",
-            interests: "İlgi Alanları",
-            stack_list: [
-                "C#, .NET Framework & .NET 8",
-                "Windows Forms & DevExpress UI",
-                "SQL / T-SQL (Sorgular, CRUD)",
-                "HTML, CSS, Temel JavaScript"
-            ],
-            tools_list: [
-                "Visual Studio, VS Code",
-                "Git & GitHub",
-                "DevExpress (DataGrid, Ribbon)",
-                "SQL Server (İlişkiler, Sorgular)",
-                "QuestPDF, OpenXML, PdfPig",
-                "Yapay Zeka API'leri (Gemini)"
-            ],
-            interests_list: [
-                "Arduino & Basit IoT Projeleri",
-                "Otomasyon İş Akışları",
-                "Masaüstü Uygulama Mimarisi",
-                "Performans & Loglama"
-            ],
+            core:    { label: "// CORE & BACKEND",       items: ["C#", ".NET 8", "Rust", "Python", "Java"] },
+            desktop: { label: "// DESKTOP & FRONTEND",   items: ["WPF", "WinForms", "DevExpress", "Tauri", "Svelte", "Next.js", "Tailwind CSS"] },
+            ai:      { label: "// AI & AUTOMATION",      items: ["Ollama", "Llama 3.2", "Yerel LLM Entegrasyonu", "Otonom İş Akışları"] },
+            arch:    { label: "// ARCHITECTURE & TOOLS", items: ["Dapr", "SQL Server", "Git", "Playwright"] },
         },
         projects: {
             title: "Öne Çıkan Projeler",
@@ -260,6 +213,27 @@ export const translations = {
                     "metehansarica.dev özel alan adına bağlandı"
                 ],
                 link: "Siteyi ziyaret et"
+            },
+            sakuKaze: {
+                title: "Saku Kaze – Yüksek Performanslı Metin Editörü",
+                subtitle: "RUST • SVELTE • TAURI",
+                desc: "Geleneksel Electron tabanlı editörlere kıyasla çok daha düşük bellek tüketimi sunan, çevrimdışı ve ultra hızlı çalışan metin editörü.",
+                bullets: [
+                    "Rust ve Tauri ile native performans",
+                    "Svelte ile reaktif ve hafif kullanıcı arayüzü",
+                    "Tamamen çevrimdışı çalışma prensibi"
+                ],
+                link: "GitHub'da Görüntüle"
+            },
+            saku: {
+                title: "S.A.K.U. – Yerel Yapay Zeka Asistanı",
+                subtitle: "PYTHON • OLLAMA • LLAMA 3.2",
+                desc: "İnternet bağlantısına ihtiyaç duymadan, cihaz üzerinde çalışan fütüristik arayüzlü kişisel yapay zeka ve otomasyon asistanı.",
+                bullets: [
+                    "Ollama ve Llama 3.2 ile %100 yerel LLM entegrasyonu",
+                    "Python tabanlı derin sistem kontrolü ve otomasyon",
+                    "Siberpunk/Terminal estetiğine sahip fütüristik UI"
+                ]
             }
         },
         contact: {

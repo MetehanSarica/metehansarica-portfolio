@@ -1,45 +1,41 @@
 "use client";
 
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { TerminalWindow } from "@/components/TerminalWindow";
 import { InteractiveTerminal } from "@/components/InteractiveTerminal";
-import { Scene3D } from "@/components/Scene3D";
+import { Background } from "@/components/Background";
 import { CodeWindow } from "@/components/CodeWindow";
-import { Terminal, Cpu, Database, Layout, Mail, Github, Linkedin } from "lucide-react";
+import { Terminal, Cpu, Zap, Layers, Wrench, Layout, Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { TypingText } from "@/components/animations/TypingText";
-import { StaggeredList, StaggeredItem } from "@/components/animations/StaggeredList";
 import { HoverCard } from "@/components/animations/HoverCard";
 
 export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative min-h-screen selection:bg-sky-500/30">
-      {/* Background 3D Scene */}
-      <div className="fixed inset-0 z-0">
-        <Scene3D />
-      </div>
+    <div className="relative min-h-screen selection:bg-violet-500/30">
+      <Background />
 
       {/* Navbar */}
-      <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-emerald-500 shadow-lg shadow-sky-500/20">
-              <span className="font-mono text-lg font-bold text-white">&lt;/&gt;</span>
+      <header className="fixed top-0 z-50 w-full border-b border-[#2A2040] bg-[#121019]/95 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <div className="flex items-center gap-3">
+            <div className="flex h-7 w-7 items-center justify-center border border-violet-500/50 bg-violet-500/10">
+              <span className="font-mono text-xs font-bold text-violet-400">&lt;/&gt;</span>
             </div>
-            <span className="font-mono text-sm font-semibold tracking-wider text-slate-200">
+            <span className="font-mono text-xs font-bold tracking-[0.2em] text-violet-100 uppercase">
               METEHANSARICA.DEV
             </span>
           </div>
-          <nav className="hidden items-center gap-8 text-xs font-medium uppercase tracking-widest text-slate-400 md:flex">
-            {["home", "about", "skills", "projects", "contact"].map((item) => (
+          <nav className="hidden items-center gap-6 md:flex">
+            {["home", "about", "skills", "projects", "contact"].map((item, i) => (
               <a
                 key={item}
                 href={`#${item}`}
-                className="transition-colors hover:text-sky-400"
+                className="flex items-center gap-1.5 font-mono text-[10px] font-medium uppercase tracking-widest text-[#6B5F8A] transition-colors hover:text-violet-400"
               >
+                <span className="text-violet-500/40">{String(i).padStart(2, "0")}.</span>
                 {t.nav[item as keyof typeof t.nav]}
               </a>
             ))}
@@ -48,47 +44,70 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto max-w-6xl px-6 pt-24">
-        {/* Hero */}
+      <main className="relative z-10 mx-auto max-w-7xl px-6 pt-20">
+        {/* ── HERO ── */}
         <section
           id="home"
-          className="grid min-h-[calc(100vh-6rem)] items-center gap-12 py-12 md:grid-cols-2 md:py-20"
+          className="grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 md:grid-cols-[1fr_420px]"
         >
           <RevealOnScroll>
             <div className="relative z-10">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                </span>
-                {t.hero.role}
+              {/* Status badge */}
+              <div className="mb-8 flex items-center gap-4">
+                <div className="inline-flex items-center gap-2 border border-fuchsia-500/30 bg-fuchsia-500/5 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fuchsia-400">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-fuchsia-400 opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-fuchsia-500" />
+                  </span>
+                  {t.hero.role}
+                </div>
+                <div className="h-px flex-1 bg-gradient-to-r from-[#2A2040] to-transparent" />
               </div>
 
-              <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
-                <TypingText text={t.hero.greeting} /> <br />
-                <span className="bg-gradient-to-r from-sky-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                  Metehan Sarıca
+              <p className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-[#4A4068]">
+                {t.hero.greeting}
+              </p>
+              <h1 className="mb-6 text-5xl font-black leading-none tracking-tight text-white md:text-7xl">
+                <TypingText text="Metehan" />
+                <br />
+                <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
+                  Sarıca
                 </span>
               </h1>
 
-              <p className="mb-8 max-w-lg text-base leading-relaxed text-slate-400">
-                {t.hero.description_part1} <span className="text-slate-200 font-semibold">{t.hero.description_highlight1}</span> {t.hero.description_part2}
-                <span className="text-sky-400"> C#</span>, <span className="text-sky-400">.NET</span>, <span className="text-sky-400">DevExpress</span> {t.hero.description_part3} <span className="text-sky-400">SQL Server</span>.
-                {t.hero.description_part4} <span className="text-emerald-400">{t.hero.description_highlight2}</span> {t.hero.description_part5}
+              {/* Tech stack strip */}
+              <div className="mb-8 flex w-fit flex-wrap items-center divide-x divide-[#2A2040] border border-[#2A2040]">
+                {["C#", ".NET 8", "RUST", "TAURI"].map((tag) => (
+                  <span key={tag} className="px-3 py-1.5 font-mono text-[10px] text-[#6B5F8A]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <p className="mb-10 max-w-lg text-sm leading-relaxed text-[#A89BC8]">
+                {t.hero.description_part1}{" "}
+                <span className="font-semibold text-violet-100">{t.hero.description_highlight1}</span>{" "}
+                {t.hero.description_part2}
+                <span className="text-violet-400"> C#</span>,{" "}
+                <span className="text-violet-400">.NET</span>,{" "}
+                <span className="text-violet-400">DevExpress</span>{" "}
+                {t.hero.description_part3} <span className="text-violet-400">SQL Server</span>.{" "}
+                {t.hero.description_part4}{" "}
+                <span className="text-fuchsia-400">{t.hero.description_highlight2}</span>{" "}
+                {t.hero.description_part5}
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="#projects"
-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-all hover:bg-slate-200"
+                  className="inline-flex items-center gap-2 border border-violet-400 bg-violet-500 px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-white transition-all hover:bg-violet-400"
                 >
-                  <Layout size={18} />
+                  <Layout size={13} />
                   {t.hero.viewProjects}
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-10" />
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/50 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-slate-500 hover:bg-slate-800"
+                  className="inline-flex items-center gap-2 border border-[#3A2D5A] px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-violet-200 transition-all hover:border-violet-500/60 hover:text-violet-400"
                 >
                   {t.hero.contactMe}
                 </a>
@@ -97,287 +116,384 @@ export default function Home() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.2}>
-            <div className="relative z-10 perspective-1000">
-              <div className="relative transform transition-transform duration-500 hover:rotate-y-2 hover:rotate-x-2">
-                <div className="absolute -inset-1 blur-xl bg-gradient-to-br from-sky-500/20 to-emerald-500/20 rounded-xl" />
+            <div className="relative z-10">
+              <div className="absolute -inset-3 bg-gradient-to-br from-violet-500/15 to-fuchsia-500/10 blur-2xl" />
+              <div className="relative border border-[#2A2040]/70">
                 <CodeWindow />
               </div>
             </div>
           </RevealOnScroll>
         </section>
 
-
-        {/* About */}
+        {/* ── ABOUT ── */}
         <section id="about" className="py-20">
           <RevealOnScroll>
-            <TerminalWindow title="about-me.md">
-              <div className="grid gap-12 md:grid-cols-[2fr_1fr]">
-                <div>
-                  <h2 className="mb-6 text-3xl font-bold text-white">
-                    <span className="text-emerald-400">01.</span> {t.about.title}
-                  </h2>
-                  <div className="space-y-4 text-slate-400">
-                    <p>
-                      {t.about.p1_part1}
-                      <span className="text-sky-400 font-semibold"> {t.about.p1_highlight1}</span>,
-                      <span className="text-sky-400 font-semibold"> {t.about.p1_highlight2}</span> {t.about.p1_part2} <span className="text-sky-400 font-semibold">{t.about.p1_highlight3}</span>.
-                    </p>
-                    <p>
-                      {t.about.p2}
-                    </p>
+            <div className="mb-10 flex items-center gap-4">
+              <span className="font-mono text-xs font-bold text-violet-400">[01]</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-violet-200">
+                // {t.about.title}
+              </span>
+              <div className="h-px flex-1 bg-[#2A2040]" />
+            </div>
 
-                    <div className="mt-6">
-                      <h3 className="text-white font-semibold mb-2">{t.about.whoIAm}</h3>
-                      <p>
-                        {t.about.whoIAm_text} <span className="text-emerald-400">{t.about.whoIAm_highlight}</span>,
-                        {t.about.whoIAm_text2}
-                      </p>
-                      <p className="mt-2">
-                        {t.about.currentWork_text} <span className="text-emerald-400">{t.about.currentWork_highlight}</span>,
-                        {t.about.currentWork_text2}
-                      </p>
+            <div className="grid gap-3 md:grid-cols-[1fr_240px]">
+              {/* Main text block — terminal prompt paragraphs */}
+              <div className="border border-[#2A2040] bg-[#1A1625] p-8">
+                <div className="space-y-0">
+                  {t.about.paragraphs.map((para, i) => (
+                    <div key={i} className="group flex gap-3 border-b border-[#2A2040]/60 py-5 last:border-0">
+                      <span className="mt-0.5 shrink-0 select-none font-mono text-xs font-bold text-fuchsia-500/60">
+                        {">"}
+                      </span>
+                      <p className="text-sm leading-relaxed text-[#A89BC8]">{para}</p>
                     </div>
-
-                    <div className="mt-6 rounded-lg border border-slate-700/50 bg-slate-800/50 p-4">
-                      <h3 className="text-white font-semibold mb-2">{t.about.whatImLookingFor}</h3>
-                      <p className="mb-2">{t.about.whatImLookingFor_text}</p>
-                      <StaggeredList className="list-disc list-inside space-y-1 text-sm">
-                        {t.about.lookingFor_list.map((item, i) => (
-                          <StaggeredItem key={i}>{item}</StaggeredItem>
-                        ))}
-                      </StaggeredList>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4 rounded-lg border border-slate-700/50 bg-slate-900/50 p-6 h-fit">
-                  <h3 className="flex items-center gap-2 font-mono text-sm font-semibold text-white">
-                    <Terminal size={16} className="text-emerald-400" />
-                    {t.about.currentFocus}
-                  </h3>
-                  <ul className="space-y-3 font-mono text-xs text-slate-400">
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>{t.about.focus_list[0]}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400" />
-                      <span>{t.about.focus_list[1]}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400" />
-                      <span>{t.about.focus_list[2]}</span>
-                    </li>
-                  </ul>
-                  <div className="pt-4 border-t border-slate-700/50">
-                    <p className="text-xs text-slate-500 italic">{t.about.quote}</p>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </TerminalWindow>
+
+              {/* Focus sidebar */}
+              <div className="flex flex-col gap-3">
+                <div className="flex-1 border border-[#2A2040] bg-[#1A1625] p-6">
+                  <h3 className="mb-5 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest text-[#6B5F8A]">
+                    <Terminal size={11} className="text-violet-400" />
+                    {t.about.currentFocus}
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      { text: t.about.focus_list[0], color: "bg-fuchsia-400", pulse: true },
+                      { text: t.about.focus_list[1], color: "bg-violet-400", pulse: false },
+                      { text: t.about.focus_list[2], color: "bg-cyan-400", pulse: false },
+                    ].map(({ text, color, pulse }, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className={`mt-1.5 h-1.5 w-1.5 shrink-0 ${color} ${pulse ? "animate-pulse" : ""}`} />
+                        <span className="font-mono text-[11px] leading-relaxed text-[#A89BC8]">{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="border border-[#2A2040] bg-[#1A1625] p-5">
+                  <p className="font-mono text-[10px] italic leading-relaxed text-[#4A4068]">{t.about.quote}</p>
+                </div>
+              </div>
+            </div>
           </RevealOnScroll>
         </section>
 
-        {/* Skills */}
+        {/* ── SKILLS ── */}
         <section id="skills" className="py-20">
           <RevealOnScroll>
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-white">
-                <span className="text-emerald-400">02.</span> {t.skills.title}
-              </h2>
+            <div className="mb-10 flex items-center gap-4">
+              <span className="font-mono text-xs font-bold text-violet-400">[02]</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-violet-200">
+                // {t.skills.title}
+              </span>
+              <div className="h-px flex-1 bg-[#2A2040]" />
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              <TerminalWindow title="Languages & Frameworks" className="md:col-span-1">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <Cpu className="text-sky-400" size={24} />
-                    <h3 className="font-semibold text-white">{t.skills.stack}</h3>
-                  </div>
-                  <StaggeredList className="space-y-2 font-mono text-xs text-slate-400">
-                    {t.skills.stack_list.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                  </StaggeredList>
+            <div className="grid grid-cols-12 gap-3">
+              {/* CORE & BACKEND — 5 cols */}
+              <div className="col-span-12 border border-[#2A2040] border-t-[2px] border-t-violet-500 bg-[#1A1625] p-6 md:col-span-5">
+                <div className="mb-4 flex items-center gap-2">
+                  <Cpu size={13} className="text-violet-400" />
+                  <span className="font-mono text-[10px] font-bold tracking-widest text-violet-500/80">
+                    {t.skills.core.label}
+                  </span>
                 </div>
-              </TerminalWindow>
+                <div className="flex flex-wrap gap-2">
+                  {t.skills.core.items.map((item, i) => (
+                    <span key={i} className="border border-violet-500/25 bg-violet-500/5 px-3 py-1.5 font-mono text-[11px] text-violet-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-              <TerminalWindow title="Tools & Technologies" className="md:col-span-1">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <Database className="text-amber-400" size={24} />
-                    <h3 className="font-semibold text-white">{t.skills.tools}</h3>
-                  </div>
-                  <StaggeredList className="space-y-2 font-mono text-xs text-slate-400">
-                    {t.skills.tools_list.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                  </StaggeredList>
+              {/* DESKTOP & FRONTEND — 7 cols */}
+              <div className="col-span-12 border border-[#2A2040] border-t-[2px] border-t-fuchsia-500 bg-[#1A1625] p-6 md:col-span-7">
+                <div className="mb-4 flex items-center gap-2">
+                  <Layers size={13} className="text-fuchsia-400" />
+                  <span className="font-mono text-[10px] font-bold tracking-widest text-fuchsia-500/80">
+                    {t.skills.desktop.label}
+                  </span>
                 </div>
-              </TerminalWindow>
+                <div className="flex flex-wrap gap-2">
+                  {t.skills.desktop.items.map((item, i) => (
+                    <span key={i} className="border border-fuchsia-500/25 bg-fuchsia-500/5 px-3 py-1.5 font-mono text-[11px] text-fuchsia-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-              <TerminalWindow title="Other Interests" className="md:col-span-1">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <Layout className="text-pink-400" size={24} />
-                    <h3 className="font-semibold text-white">{t.skills.interests}</h3>
-                  </div>
-                  <StaggeredList className="space-y-2 font-mono text-xs text-slate-400">
-                    {t.skills.interests_list.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                  </StaggeredList>
+              {/* AI & AUTOMATION — 7 cols */}
+              <div className="col-span-12 border border-[#2A2040] border-t-[2px] border-t-purple-400 bg-[#1A1625] p-6 md:col-span-7">
+                <div className="mb-4 flex items-center gap-2">
+                  <Zap size={13} className="text-purple-400" />
+                  <span className="font-mono text-[10px] font-bold tracking-widest text-purple-400/80">
+                    {t.skills.ai.label}
+                  </span>
                 </div>
-              </TerminalWindow>
+                <div className="flex flex-wrap gap-2">
+                  {t.skills.ai.items.map((item, i) => (
+                    <span key={i} className="border border-purple-400/25 bg-purple-400/5 px-3 py-1.5 font-mono text-[11px] text-purple-300">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* ARCHITECTURE & TOOLS — 5 cols */}
+              <div className="col-span-12 border border-[#2A2040] border-t-[2px] border-t-cyan-400 bg-[#1A1625] p-6 md:col-span-5">
+                <div className="mb-4 flex items-center gap-2">
+                  <Wrench size={13} className="text-cyan-400" />
+                  <span className="font-mono text-[10px] font-bold tracking-widest text-cyan-400/80">
+                    {t.skills.arch.label}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {t.skills.arch.items.map((item, i) => (
+                    <span key={i} className="border border-cyan-400/25 bg-cyan-400/5 px-3 py-1.5 font-mono text-[11px] text-cyan-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </RevealOnScroll>
         </section>
 
-        {/* Projects */}
+        {/* ── PROJECTS ── */}
         <section id="projects" className="py-20">
           <RevealOnScroll>
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-white">
-                <span className="text-emerald-400">03.</span> {t.projects.title}
-              </h2>
+            <div className="mb-10 flex items-center gap-4">
+              <span className="font-mono text-xs font-bold text-violet-400">[03]</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-violet-200">
+                // {t.projects.title}
+              </span>
+              <div className="h-px flex-1 bg-[#2A2040]" />
             </div>
 
-            <div className="space-y-12">
-              {/* Project 1 */}
-              <HoverCard>
-                <TerminalWindow title="Storiva - Smart Inventory">
-                  <div className="relative p-2">
-                    <div className="flex flex-col justify-center">
-                      <div className="mb-2">
-                        <h3 className="text-2xl font-bold text-white">{t.projects.storiva.title}</h3>
-                        <p className="font-mono text-xs text-sky-400 mt-1">{t.projects.storiva.subtitle}</p>
+            <div className="grid grid-cols-12 gap-3">
+              {/* Storiva — full width featured */}
+              <HoverCard className="col-span-12">
+                <div className="border border-[#2A2040] border-l-[3px] border-l-violet-500 bg-[#1A1625]">
+                  <div className="grid md:grid-cols-[1fr_180px]">
+                    <div className="p-8">
+                      <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-widest text-violet-500/50">
+                        PROJECT_01
+                      </p>
+                      <h3 className="mb-1 text-2xl font-black text-violet-100">{t.projects.storiva.title}</h3>
+                      <p className="mb-6 font-mono text-[10px] text-[#4A4068]">{t.projects.storiva.subtitle}</p>
+                      <p className="mb-6 text-sm leading-relaxed text-[#A89BC8]">{t.projects.storiva.desc}</p>
+                      <ul className="space-y-2">
+                        {t.projects.storiva.bullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs text-[#6B5F8A]">
+                            <span className="shrink-0 font-mono text-violet-500/50">›</span>
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="hidden flex-col justify-between border-l border-[#2A2040] p-6 md:flex">
+                      <div className="space-y-2">
+                        {["C#", ".NET 8", "DEVEXPRESS", "SQL SERVER", "AI"].map((tag) => (
+                          <div key={tag} className="border-b border-[#2A2040] pb-2 font-mono text-[10px] text-[#4A4068]">
+                            {tag}
+                          </div>
+                        ))}
                       </div>
-
-                      <div className="mb-6 rounded-md bg-slate-900/50 p-6 text-base leading-relaxed text-slate-400 border border-slate-700/50">
-                        <p>{t.projects.storiva.desc}</p>
-                        <StaggeredList className="mt-4 list-disc list-inside space-y-1 text-sm text-slate-300">
-                          {t.projects.storiva.bullets.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                        </StaggeredList>
-                      </div>
+                      <span className="font-mono text-[10px] uppercase text-[#3A3058]">WIP</span>
                     </div>
                   </div>
-                </TerminalWindow>
+                </div>
               </HoverCard>
 
-              {/* Project 2 */}
-              <HoverCard>
-                <TerminalWindow title="Notoid - AI Study Assistant">
-                  <div className="relative p-2">
-                    <div className="flex flex-col justify-center">
-                      <div className="mb-2">
-                        <h3 className="text-2xl font-bold text-white">{t.projects.notoid.title}</h3>
-                        <p className="font-mono text-xs text-sky-400 mt-1">{t.projects.notoid.subtitle}</p>
-                      </div>
-
-                      <div className="mb-6 rounded-md bg-slate-900/50 p-6 text-base leading-relaxed text-slate-400 border border-slate-700/50">
-                        <p>{t.projects.notoid.desc}</p>
-                        <StaggeredList className="mt-4 list-disc list-inside space-y-1 text-sm text-slate-300">
-                          {t.projects.notoid.bullets.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                        </StaggeredList>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <a href="https://github.com/MetehanSarica/Notoid" className="font-mono text-sm font-semibold text-white hover:text-sky-400 hover:underline">
-                          {t.projects.notoid.link}
-                        </a>
-                      </div>
-                    </div>
+              {/* Notoid — 7 cols */}
+              <HoverCard className="col-span-12 md:col-span-7">
+                <div className="h-full border border-[#2A2040] border-l-[3px] border-l-fuchsia-500 bg-[#1A1625]">
+                  <div className="p-7">
+                    <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-widest text-fuchsia-500/50">
+                      PROJECT_02
+                    </p>
+                    <h3 className="mb-1 text-xl font-black text-violet-100">{t.projects.notoid.title}</h3>
+                    <p className="mb-5 font-mono text-[10px] text-[#4A4068]">{t.projects.notoid.subtitle}</p>
+                    <p className="mb-5 text-sm leading-relaxed text-[#A89BC8]">{t.projects.notoid.desc}</p>
+                    <ul className="mb-6 space-y-2">
+                      {t.projects.notoid.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#6B5F8A]">
+                          <span className="shrink-0 font-mono text-fuchsia-500/50">›</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="https://github.com/MetehanSarica/Notoid"
+                      className="inline-flex items-center gap-1.5 border border-fuchsia-500/30 bg-fuchsia-500/5 px-4 py-2 font-mono text-[11px] font-bold text-fuchsia-400 transition-all hover:bg-fuchsia-500/10"
+                    >
+                      <Github size={12} />
+                      {t.projects.notoid.link}
+                      <ArrowUpRight size={11} />
+                    </a>
                   </div>
-                </TerminalWindow>
+                </div>
               </HoverCard>
 
-              {/* Project 3 */}
-              <HoverCard>
-                <TerminalWindow title="metehansarica.dev - Portfolio">
-                  <div className="relative p-2">
-                    <div className="flex flex-col justify-center">
-                      <div className="mb-2">
-                        <h3 className="text-2xl font-bold text-white">{t.projects.portfolio.title}</h3>
-                        <p className="font-mono text-xs text-sky-400 mt-1">{t.projects.portfolio.subtitle}</p>
-                      </div>
-
-                      <div className="mb-6 rounded-md bg-slate-900/50 p-6 text-base leading-relaxed text-slate-400 border border-slate-700/50">
-                        <p>{t.projects.portfolio.desc}</p>
-                        <StaggeredList className="mt-4 list-disc list-inside space-y-1 text-sm text-slate-300">
-                          {t.projects.portfolio.bullets.map((item, i) => <StaggeredItem key={i}>{item}</StaggeredItem>)}
-                        </StaggeredList>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <a href="#" className="font-mono text-sm font-semibold text-white hover:text-sky-400 hover:underline">
-                          {t.projects.portfolio.link}
-                        </a>
-                      </div>
-                    </div>
+              {/* Portfolio — 5 cols */}
+              <HoverCard className="col-span-12 md:col-span-5">
+                <div className="h-full border border-[#2A2040] border-l-[3px] border-l-cyan-400 bg-[#1A1625]">
+                  <div className="p-7">
+                    <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-widest text-cyan-400/50">
+                      PROJECT_03
+                    </p>
+                    <h3 className="mb-1 text-xl font-black text-violet-100">{t.projects.portfolio.title}</h3>
+                    <p className="mb-5 font-mono text-[10px] text-[#4A4068]">{t.projects.portfolio.subtitle}</p>
+                    <p className="mb-5 text-sm leading-relaxed text-[#A89BC8]">{t.projects.portfolio.desc}</p>
+                    <ul className="mb-6 space-y-2">
+                      {t.projects.portfolio.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#6B5F8A]">
+                          <span className="shrink-0 font-mono text-cyan-400/50">›</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="#"
+                      className="inline-flex items-center gap-1.5 border border-cyan-400/30 bg-cyan-400/5 px-4 py-2 font-mono text-[11px] font-bold text-cyan-400 transition-all hover:bg-cyan-400/10"
+                    >
+                      <ArrowUpRight size={12} />
+                      {t.projects.portfolio.link}
+                    </a>
                   </div>
-                </TerminalWindow>
+                </div>
+              </HoverCard>
+
+              {/* Saku Kaze — 6 cols */}
+              <HoverCard className="col-span-12 md:col-span-6">
+                <div className="h-full border border-[#2A2040] border-l-[3px] border-l-purple-400 bg-[#1A1625]">
+                  <div className="p-7">
+                    <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-widest text-purple-400/50">
+                      PROJECT_04
+                    </p>
+                    <h3 className="mb-1 text-xl font-black text-violet-100">{t.projects.sakuKaze.title}</h3>
+                    <p className="mb-5 font-mono text-[10px] text-[#4A4068]">{t.projects.sakuKaze.subtitle}</p>
+                    <p className="mb-5 text-sm leading-relaxed text-[#A89BC8]">{t.projects.sakuKaze.desc}</p>
+                    <ul className="mb-6 space-y-2">
+                      {t.projects.sakuKaze.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#6B5F8A]">
+                          <span className="shrink-0 font-mono text-purple-400/50">›</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="https://github.com/MetehanSarica/saku-kaze"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 border border-purple-400/30 bg-purple-400/5 px-4 py-2 font-mono text-[11px] font-bold text-purple-300 transition-all hover:bg-purple-400/10"
+                    >
+                      <Github size={12} />
+                      {t.projects.sakuKaze.link}
+                      <ArrowUpRight size={11} />
+                    </a>
+                  </div>
+                </div>
+              </HoverCard>
+
+              {/* S.A.K.U. — 6 cols */}
+              <HoverCard className="col-span-12 md:col-span-6">
+                <div className="h-full border border-[#2A2040] border-l-[3px] border-l-indigo-400 bg-[#1A1625]">
+                  <div className="p-7">
+                    <p className="mb-1 font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-400/50">
+                      PROJECT_05
+                    </p>
+                    <h3 className="mb-1 text-xl font-black text-violet-100">{t.projects.saku.title}</h3>
+                    <p className="mb-5 font-mono text-[10px] text-[#4A4068]">{t.projects.saku.subtitle}</p>
+                    <p className="mb-5 text-sm leading-relaxed text-[#A89BC8]">{t.projects.saku.desc}</p>
+                    <ul className="space-y-2">
+                      {t.projects.saku.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-[#6B5F8A]">
+                          <span className="shrink-0 font-mono text-indigo-400/50">›</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </HoverCard>
             </div>
           </RevealOnScroll>
         </section>
 
-        {/* Contact */}
-        <section id="contact" className="py-20 text-center">
+        {/* ── CONTACT ── */}
+        <section id="contact" className="py-20">
           <RevealOnScroll>
-            <h2 className="mb-4 text-4xl font-bold text-white">
-              <span className="text-emerald-400">04.</span> {t.contact.title}
-            </h2>
-            <p className="mx-auto mb-12 max-w-xl text-slate-400">
-              {t.contact.text}
-            </p>
+            <div className="mb-10 flex items-center gap-4">
+              <span className="font-mono text-xs font-bold text-violet-400">[04]</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-violet-200">
+                // {t.contact.title}
+              </span>
+              <div className="h-px flex-1 bg-[#2A2040]" />
+            </div>
 
-            <div className="flex flex-wrap justify-center gap-6">
-              <HoverCard>
-                <a
-                  href="mailto:metehansrc23@gmail.com"
-                  className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-700 bg-slate-900/50 px-8 py-4 transition-all hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20"
-                >
-                  <div className="rounded-full bg-slate-800 p-2 text-slate-300 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
-                    <Mail size={20} />
-                  </div>
-                  <span className="font-mono text-sm font-semibold text-slate-300 group-hover:text-emerald-400">
-                    {t.contact.email}
-                  </span>
-                </a>
-              </HoverCard>
-
-              <HoverCard>
-                <a
-                  href="https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-700 bg-slate-900/50 px-8 py-4 transition-all hover:border-blue-500/50 hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20"
-                >
-                  <div className="rounded-full bg-slate-800 p-2 text-slate-300 transition-colors group-hover:bg-blue-500 group-hover:text-white">
-                    <Linkedin size={20} />
-                  </div>
-                  <span className="font-mono text-sm font-semibold text-slate-300 group-hover:text-blue-400">
-                    {t.contact.linkedin}
-                  </span>
-                </a>
-              </HoverCard>
-
-              <HoverCard>
-                <a
-                  href="https://github.com/MetehanSarica"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-slate-700 bg-slate-900/50 px-8 py-4 transition-all hover:border-violet-500/50 hover:bg-violet-500/10 hover:shadow-lg hover:shadow-violet-500/20"
-                >
-                  <div className="rounded-full bg-slate-800 p-2 text-slate-300 transition-colors group-hover:bg-violet-500 group-hover:text-white">
-                    <Github size={20} />
-                  </div>
-                  <span className="font-mono text-sm font-semibold text-slate-300 group-hover:text-violet-400">
-                    {t.contact.github}
-                  </span>
-                </a>
-              </HoverCard>
+            {/* Fixed 260px sidebar — identical width regardless of locale text length */}
+            <div className="grid gap-3 md:grid-cols-[1fr_260px]">
+              <div className="border border-[#2A2040] bg-[#1A1625] p-8">
+                <p className="max-w-lg text-sm leading-relaxed text-[#A89BC8]">{t.contact.text}</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <HoverCard>
+                  <a
+                    href="mailto:metehansrc23@gmail.com"
+                    className="group flex w-full items-center gap-3 border border-[#2A2040] bg-[#1A1625] px-6 py-4 transition-all hover:border-fuchsia-500/40 hover:bg-fuchsia-500/5"
+                  >
+                    <Mail size={15} className="shrink-0 text-fuchsia-400" />
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-[#6B5F8A] group-hover:text-fuchsia-400">
+                      {t.contact.email}
+                    </span>
+                  </a>
+                </HoverCard>
+                <HoverCard>
+                  <a
+                    href="https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex w-full items-center gap-3 border border-[#2A2040] bg-[#1A1625] px-6 py-4 transition-all hover:border-violet-500/40 hover:bg-violet-500/5"
+                  >
+                    <Linkedin size={15} className="shrink-0 text-violet-400" />
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-[#6B5F8A] group-hover:text-violet-400">
+                      {t.contact.linkedin}
+                    </span>
+                  </a>
+                </HoverCard>
+                <HoverCard>
+                  <a
+                    href="https://github.com/MetehanSarica"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex w-full items-center gap-3 border border-[#2A2040] bg-[#1A1625] px-6 py-4 transition-all hover:border-purple-400/40 hover:bg-purple-400/5"
+                  >
+                    <Github size={15} className="shrink-0 text-purple-400" />
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-[#6B5F8A] group-hover:text-purple-400">
+                      {t.contact.github}
+                    </span>
+                  </a>
+                </HoverCard>
+              </div>
             </div>
           </RevealOnScroll>
         </section>
       </main>
 
-      <footer className="border-t border-slate-800 bg-[#0a0a0a] py-8 text-center text-slate-500">
-        <p>© {new Date().getFullYear()} {t.footer_text}</p>
+      <footer className="border-t border-[#2A2040] bg-[#0D0B14] py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-[#4A4068]">
+            © {new Date().getFullYear()} {t.footer_text}
+          </p>
+          <div className="flex items-center gap-3">
+            <div className="h-px w-16 bg-[#2A2040]" />
+            <span className="font-mono text-[10px] text-[#3A3058]">EOF</span>
+          </div>
+        </div>
       </footer>
 
       <InteractiveTerminal />

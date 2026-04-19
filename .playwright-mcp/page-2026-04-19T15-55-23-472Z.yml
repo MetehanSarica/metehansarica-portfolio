@@ -1,0 +1,233 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e11]: </>
+          - generic [ref=e12]: METEHANSARICA.DEV
+        - navigation [ref=e13]:
+          - link "00. Home" [ref=e14] [cursor=pointer]:
+            - /url: "#home"
+            - generic [ref=e15]: "00."
+            - text: Home
+          - link "01. About" [ref=e16] [cursor=pointer]:
+            - /url: "#about"
+            - generic [ref=e17]: "01."
+            - text: About
+          - link "02. Skills" [ref=e18] [cursor=pointer]:
+            - /url: "#skills"
+            - generic [ref=e19]: "02."
+            - text: Skills
+          - link "03. Projects" [ref=e20] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e21]: "03."
+            - text: Projects
+          - link "04. Contact" [ref=e22] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=e23]: "04."
+            - text: Contact
+          - generic [ref=e24]:
+            - button "TR" [ref=e25]
+            - button "EN" [ref=e26]: EN
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - generic [ref=e33]: Junior .NET Developer
+          - paragraph [ref=e38]: Hi, I'm
+          - heading "Metehan Sarıca" [level=1] [ref=e39]:
+            - generic [ref=e40]: Metehan
+            - text: Sarıca
+          - generic [ref=e41]:
+            - generic [ref=e42]: C#
+            - generic [ref=e43]: .NET 8
+            - generic [ref=e44]: DEVEXPRESS
+            - generic [ref=e45]: SQL SERVER
+          - paragraph [ref=e46]: I build clean and efficient desktop applications using C#, .NET, DevExpress and SQL Server. I enjoy creating tools that automate study and work, especially by integrating AI-powered workflows into real projects.
+          - generic [ref=e47]:
+            - link "View Projects" [ref=e48] [cursor=pointer]:
+              - /url: "#projects"
+              - img [ref=e49]
+              - text: View Projects
+            - link "Contact Me" [ref=e51] [cursor=pointer]:
+              - /url: "#contact"
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e59]: Developer.cs
+            - generic [ref=e60]:
+              - img [ref=e61] [cursor=pointer]
+              - img [ref=e62] [cursor=pointer]
+              - img [ref=e67] [cursor=pointer]
+          - generic [ref=e70]:
+            - generic [ref=e72]: "1"
+            - generic [ref=e73]: "|"
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: "[01]"
+          - generic [ref=e78]: // About
+        - generic [ref=e80]:
+          - generic [ref=e82]:
+            - paragraph [ref=e83]:
+              - text: I am a Computer Programming student and Junior .NET Developer focused on
+              - generic [ref=e84]: line-of-business desktop applications
+              - text: ","
+              - generic [ref=e85]: SQL Server
+              - text: and DevExpress UI.
+            - paragraph [ref=e86]: I like turning ideas into reliable software, with clean architecture, readable code and practical features that people actually use.
+            - generic [ref=e87]:
+              - heading "Who I am" [level=3] [ref=e88]
+              - paragraph [ref=e89]: I like combining clean UI with solid application logic behind it. One of my main projects, Notoid,is an AI-powered study assistant that summarizes documents into structured notes using Gemini AI.
+              - paragraph [ref=e90]: I'm also currently working on Storiva,a smart inventory & product management system built with .NET 8, DevExpress and SQL Server. I enjoy experimenting with desktop app architecture, automation workflows and integrating AI into existing tools to make them more useful.
+            - generic [ref=e91]:
+              - heading "What I'm looking for" [level=3] [ref=e92]
+              - paragraph [ref=e93]: "I'm actively seeking opportunities where I can:"
+              - list [ref=e94]:
+                - listitem [ref=e95]:
+                  - generic [ref=e96]: "01."
+                  - generic [ref=e97]: Work with C#, .NET, DevExpress and SQL Server in real-world projects
+                - listitem [ref=e98]:
+                  - generic [ref=e99]: "02."
+                  - generic [ref=e100]: Contribute to desktop or backend applications used by real users
+                - listitem [ref=e101]:
+                  - generic [ref=e102]: "03."
+                  - generic [ref=e103]: Learn from experienced developers and grow as an engineer
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - heading "current_focus" [level=3] [ref=e106]:
+                - img [ref=e107]
+                - text: current_focus
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - generic [ref=e112]: Desktop apps with .NET & DevExpress
+                - listitem [ref=e113]:
+                  - generic [ref=e115]: SQL Server & database-driven applications
+                - listitem [ref=e116]:
+                  - generic [ref=e118]: AI integration (Gemini API, automation)
+            - paragraph [ref=e120]: "\"Always learning. Always building useful tools.\""
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: "[02]"
+          - generic [ref=e125]: // Tech Stack
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - img [ref=e130]
+              - generic [ref=e133]: Stack
+            - generic [ref=e134]:
+              - generic [ref=e135]: C#, .NET Framework & .NET 8
+              - generic [ref=e136]: Windows Forms & DevExpress UI
+              - generic [ref=e137]: SQL / T-SQL (Queries, CRUD)
+              - generic [ref=e138]: HTML, CSS, Basic JavaScript
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - img [ref=e141]
+              - generic [ref=e143]: Interests
+            - generic [ref=e144]:
+              - generic [ref=e145]: Arduino & Simple IoT Projects
+              - generic [ref=e146]: Automation Workflows
+              - generic [ref=e147]: Desktop App Architecture
+              - generic [ref=e148]: Performance & Logging
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - img [ref=e151]
+              - generic [ref=e155]: Tools
+            - generic [ref=e156]:
+              - generic [ref=e157]: Visual Studio, VS Code
+              - generic [ref=e158]: Git & GitHub
+              - generic [ref=e159]: DevExpress (DataGrid, Ribbon)
+              - generic [ref=e160]: SQL Server (Relations, Queries)
+              - generic [ref=e161]: QuestPDF, OpenXML, PdfPig
+              - generic [ref=e162]: AI APIs (Gemini)
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - generic [ref=e166]: "[03]"
+          - generic [ref=e167]: // Featured Projects
+        - generic [ref=e169]:
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - paragraph [ref=e174]: PROJECT_01
+              - heading "Storiva – Smart Inventory & Product Management" [level=3] [ref=e175]
+              - paragraph [ref=e176]: C# • .NET 8 • DEVEXPRESS • SQL SERVER • AI INTEGRATION
+              - paragraph [ref=e177]: Storiva is a smart inventory and product management system built with .NET 8, DevExpress and SQL Server. It focuses on stock tracking, product management, role-based access and future AI-assisted features to help small businesses manage their operations more efficiently.
+              - list [ref=e178]:
+                - listitem [ref=e179]:
+                  - generic [ref=e180]: ›
+                  - text: Designed with a modern DevExpress-based desktop UI
+                - listitem [ref=e181]:
+                  - generic [ref=e182]: ›
+                  - text: Uses SQL Server for structured, reliable data storage and queries
+                - listitem [ref=e183]:
+                  - generic [ref=e184]: ›
+                  - text: Architected to integrate AI features (Gemini API) for product descriptions and insights
+            - generic [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: C#
+                - generic [ref=e188]: .NET 8
+                - generic [ref=e189]: DEVEXPRESS
+                - generic [ref=e190]: SQL SERVER
+                - generic [ref=e191]: AI
+              - generic [ref=e192]: WIP
+          - generic [ref=e195]:
+            - paragraph [ref=e196]: PROJECT_02
+            - heading "Notoid – AI-Powered Study Assistant" [level=3] [ref=e197]
+            - paragraph [ref=e198]: C# • .NET • DEVEXPRESS • GEMINI AI • QUESTPDF
+            - paragraph [ref=e199]: A Windows desktop application that parses PDF, DOCX and PPTX files and generates concise, structured study notes using Gemini AI. It handles file parsing, progress tracking and PDF generation in a single workflow.
+            - list [ref=e200]:
+              - listitem [ref=e201]:
+                - generic [ref=e202]: ›
+                - text: Built with C# and .NET, using DevExpress for the UI
+              - listitem [ref=e203]:
+                - generic [ref=e204]: ›
+                - text: Uses PdfPig and OpenXML to parse documents
+              - listitem [ref=e205]:
+                - generic [ref=e206]: ›
+                - text: Generates clean study PDFs via QuestPDF
+            - link "View on GitHub" [ref=e207] [cursor=pointer]:
+              - /url: https://github.com/MetehanSarica/Notoid
+              - img [ref=e208]
+              - text: View on GitHub
+              - img [ref=e211]
+          - generic [ref=e216]:
+            - paragraph [ref=e217]: PROJECT_03
+            - heading "metehansarica.dev – Personal Portfolio" [level=3] [ref=e218]
+            - paragraph [ref=e219]: NEXT.JS • TAILWIND CSS • NETLIFY • CUSTOM DOMAIN
+            - paragraph [ref=e220]: A modern, responsive portfolio website to showcase my projects, skills and experience as a Junior .NET Developer. Deployed on Netlify with a custom domain and Google Analytics integration to track visitors and engagement.
+            - list [ref=e221]:
+              - listitem [ref=e222]:
+                - generic [ref=e223]: ›
+                - text: Built with Next.js and Tailwind CSS
+              - listitem [ref=e224]:
+                - generic [ref=e225]: ›
+                - text: Deployed via Netlify with CI/CD workflow
+              - listitem [ref=e226]:
+                - generic [ref=e227]: ›
+                - text: Connected to metehansarica.dev custom domain
+            - link "Visit site" [ref=e228] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e229]
+              - text: Visit site
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - generic [ref=e235]: "[04]"
+          - generic [ref=e236]: // Get In Touch
+        - generic [ref=e238]:
+          - paragraph [ref=e240]: I’m always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+          - generic [ref=e241]:
+            - link "Send Email" [ref=e243] [cursor=pointer]:
+              - /url: mailto:metehansrc23@gmail.com
+              - img [ref=e244]
+              - generic [ref=e247]: Send Email
+            - link "LinkedIn" [ref=e249] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/
+              - img [ref=e250]
+              - generic [ref=e254]: LinkedIn
+            - link "GitHub" [ref=e256] [cursor=pointer]:
+              - /url: https://github.com/MetehanSarica
+              - img [ref=e257]
+              - generic [ref=e260]: GitHub
+    - contentinfo [ref=e261]:
+      - generic [ref=e262]:
+        - paragraph [ref=e263]: © 2026 Metehan Sarıca. Built with Next.js & Tailwind CSS.
+        - generic [ref=e266]: EOF
+    - button
+  - button "Open Next.js Dev Tools" [ref=e272] [cursor=pointer]:
+    - img [ref=e273]

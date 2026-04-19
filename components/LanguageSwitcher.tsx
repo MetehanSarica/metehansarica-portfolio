@@ -1,28 +1,25 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { clsx } from "clsx";
 import { motion } from "framer-motion";
 
 export function LanguageSwitcher() {
     const { language, setLanguage } = useLanguage();
 
     return (
-        <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 relative">
+        <div className="relative flex items-center gap-1 border border-[#2A2040] bg-[#1A1625] p-1">
             {(["tr", "en"] as const).map((lang) => (
                 <button
                     key={lang}
                     onClick={() => setLanguage(lang)}
-                    className={clsx(
-                        "relative z-10 rounded-full px-3 py-1 text-xs font-medium transition-colors",
-                        language === lang ? "text-white" : "text-slate-400 hover:text-white"
-                    )}
+                    className="relative z-10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest transition-colors"
+                    style={{ color: language === lang ? "#EDE9FE" : "#4A4068" }}
                 >
                     {language === lang && (
                         <motion.div
                             layoutId="active-lang"
-                            className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 shadow-lg shadow-sky-500/20"
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            className="absolute inset-0 -z-10 bg-violet-600/60"
+                            transition={{ type: "spring", stiffness: 400, damping: 35 }}
                         />
                     )}
                     {lang.toUpperCase()}
