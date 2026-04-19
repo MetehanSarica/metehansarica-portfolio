@@ -1,95 +1,180 @@
-# METEHANSARICA.DEV 🚀
+<div align="center">
 
-![Portfolio Preview](https://metehansarica.dev/opengraph-image.png)
+# `// metehansarica.dev`
 
-> A modern, interactive portfolio website for a Junior .NET Developer, built with **Next.js 16**, **React 19**, and **Tailwind CSS 4**.
+**A data-dense, performance-first personal portfolio.**
+_Built lean. Shipped static. Cloud-skeptical._
 
-This project showcases a developer-first aesthetic with a terminal-inspired UI, 3D interactive elements, and a fully functional floating command-line widget.
+[![Live Site](https://img.shields.io/badge/LIVE-metehansarica.dev-4F46E5?style=for-the-badge&labelColor=000000)](https://metehansarica.dev)
+[![Repository](https://img.shields.io/badge/REPO-GitHub-1F2937?style=for-the-badge&logo=github&labelColor=000000)](https://github.com/MetehanSarica/metehansarica-portfolio)
+[![Deploy](https://img.shields.io/badge/DEPLOY-Netlify-00C7B7?style=for-the-badge&logo=netlify&labelColor=000000)](https://metehansarica.dev)
 
-## ✨ Key Features
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0F172A?style=flat-square&logo=tailwindcss&logoColor=38BDF8)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![i18n](https://img.shields.io/badge/i18n-TR_|_EN-4F46E5?style=flat-square)
 
-- **🎨 Immersive Design**: Dark theme with a "VS Code" and "Terminal" inspired aesthetic.
-- **🧊 3D Interactivity**: Reactive 3D particle scene using `React Three Fiber`.
-- **⌨️ Interactive Terminal**: A functional, draggable terminal widget (`ls`, `cd`, `whoami`, etc.).
-- **⚡ Performance**: Built on Next.js 16 (Turbopack) for blazing fast performance.
-- **📱 Responsive**: Fully optimized for desktop, tablet, and mobile devices.
-- **🧩 Type-Safe**: 100% written in TypeScript.
-
-## 🛠️ Tech Stack
-
-- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
-- **Core**: React 19, TypeScript
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Animations**: Framer Motion
-- **3D Graphics**: Three.js, React Three Fiber, Drei
-- **Icons**: Lucide React
-- **Font**: Inter (Sans) & Fira Code (Mono)
-
-## 🚀 Getting Started
-
-Clone the repository and install dependencies to run the project locally.
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm / yarn / pnpm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/MetehanSarica/metehansarica-portfolio.git
-
-# Navigate to the project directory
-cd metehansarica-portfolio
-
-# Install dependencies
-npm install
-```
-
-### Running Locally
-
-```bash
-npm run dev
-# Open http://localhost:3000 in your browser
-```
-
-## 🖥️ Terminal Commands
-
-The floating terminal widget supports the following commands:
-
-| Command | Description |
-| :--- | :--- |
-| `help` | Lists available commands |
-| `ls` | Lists site sections (home, about, skills, etc.) |
-| `cd [section]` | Navigates to a specific section |
-| `cat [section]` | Displays a brief summary of the section |
-| `whoami` | Displays developer bio |
-| `open [link]` | Opens GitHub, LinkedIn, or Email |
-| `clear` | Clears the terminal history |
-
-## 📂 Project Structure
-
-```bash
-├── app/                  # Next.js App Router
-│   ├── globals.css       # Global styles & Tailwind
-│   ├── layout.tsx        # Root layout & Metadata
-│   └── page.tsx          # Main landing page
-├── components/           # Reusable UI Components
-│   ├── CodeWindow.tsx    # C# Code typing effect
-│   ├── InteractiveTerminal.tsx # Floating terminal widget
-│   ├── RevealOnScroll.tsx # Animation wrapper
-│   ├── Scene3D.tsx       # Three.js background scene
-│   └── TerminalWindow.tsx # Section container
-└── public/               # Static assets
-```
-
-## 📬 Contact
-
-- **Email**: [metehansrc23@gmail.com](mailto:metehansrc23@gmail.com)
-- **LinkedIn**: [Metehan Sarıca](https://www.linkedin.com/in/metehan-sar%C4%B1ca-09b27a269/)
-- **GitHub**: [@MetehanSarica](https://github.com/MetehanSarica)
+</div>
 
 ---
 
-Built with ❤️ by [Metehan Sarıca](https://metehansarica.dev).
+> [!NOTE]
+> **Design doctrine:** ship the smallest artifact that does the job, and let the user's machine do the rest.
+> Performance-first. Offline-capable. Minimal cloud reliance.
+
+---
+
+## `§ 01 — Architecture & Philosophy`
+
+A single-page portfolio organized as a **Bento-box grid** — each cell is a self-contained module (bio, stack, projects, contact) sized by information weight rather than visual symmetry.
+
+No parallax. No scroll-jacking. No hero video.
+
+The UI is a deliberate exercise in **Brutalist Indigo**:
+
+- Deep purple palette on a near-black canvas
+- Hard `1px` high-contrast borders
+- Monospace typography throughout
+- Terminal-adjacent chrome and section markers
+- Content density prioritized over whitespace
+
+#### Bilingual Structural Sync
+
+The site is fully bilingual (`TR` / `EN`) via i18n. Both locales are **structurally synchronized** — every key, section, and metadata block exists in parity across locales, validated at build time. English is not layered on top of Turkish; they are siblings.
+
+```
+locales/
+├── tr/   ─ primary
+└── en/   ─ structural mirror, validated
+```
+
+---
+
+## `§ 02 — Tech Stack`
+
+| Layer      | Tool                          | Rationale                          |
+| :--------- | :---------------------------- | :--------------------------------- |
+| Framework  | `Next.js`                     | Static export, zero runtime bloat  |
+| Styling    | `Tailwind CSS`                | Utility-first, purged at build     |
+| Language   | `TypeScript`                  | Typed contracts, compile-time gate |
+| i18n       | Static locale trees           | No runtime translation fetches     |
+| Deploy     | `Netlify`                     | Edge-cached static output          |
+
+**Not used:** analytics SDKs · tracking pixels · runtime third-party APIs.
+
+---
+
+## `§ 03 — Featured Projects`
+
+Each project showcased on the live site links to its own repository.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### `Saku Kaze`
+Offline, blazingly fast text editor.
+Local-first. Zero telemetry.
+
+`Rust` · `Svelte` · `Tauri`
+
+</td>
+<td width="50%" valign="top">
+
+### `S.A.K.U.`
+Localized, futuristic AI assistant.
+Runs entirely on-device.
+
+`Python` · `Ollama` · `Llama 3.2`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### `Notoid`
+AI-powered study assistant and document extractor.
+
+`Document AI` · `NLP`
+
+</td>
+<td width="50%" valign="top">
+
+### `Storiva`
+Smart stock and product management system.
+
+`Inventory` · `Analytics`
+
+</td>
+</tr>
+</table>
+
+---
+
+## `§ 04 — Local Development`
+
+> [!IMPORTANT]
+> Requires `Node.js ≥ 18` and `npm`.
+
+```bash
+# clone
+git clone https://github.com/MetehanSarica/metehansarica-portfolio.git
+cd metehansarica-portfolio
+
+# install dependencies
+npm install
+
+# start dev server → http://localhost:3000
+npm run dev
+
+# production build (static export)
+npm run build
+```
+
+#### Project Structure
+
+```
+.
+├── public/          ─ static assets
+├── src/
+│   ├── app/         ─ next.js app router
+│   ├── components/  ─ bento modules
+│   ├── locales/     ─ tr / en trees
+│   └── styles/      ─ tailwind config
+├── next.config.js
+└── tailwind.config.ts
+```
+
+---
+
+## `§ 05 — Build Status`
+
+```
+  build     ─ static
+  render    ─ client-light
+  deps      ─ minimal
+  analytics ─ none
+  status    ─ shipped
+```
+
+---
+
+## `§ 06 — Links`
+
+<div align="left">
+
+[![GitHub](https://img.shields.io/badge/GitHub-@MetehanSarica-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MetehanSarica)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/<your-handle>)
+[![Website](https://img.shields.io/badge/Web-metehansarica.dev-4F46E5?style=for-the-badge&logo=vercel&logoColor=white)](https://metehansarica.dev)
+
+</div>
+
+---
+
+<div align="center">
+
+`— Metehan Sarıca`
+
+<sub>Built with discipline. Deployed without ceremony.</sub>
+
+</div>
